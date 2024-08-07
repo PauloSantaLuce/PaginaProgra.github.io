@@ -1,0 +1,273 @@
+/* || General setup*/
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+
+html{
+    font-size: 10px;
+    background-image: url(Fondo2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0 auto;
+}
+/* hacemos la configuración de los "contenedores" para cada apartado*/
+.grid-container>* {
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+/*Hacemos la estructura para móviles*/
+.grid-container {
+    display: grid;
+    gap: 20px;
+/*Hacemos la estrucuta para telefonos celulares... es necesario, más no esta bien configurada*/
+    grid-template:
+        "header" 200px
+        "navbar" 50px
+        "main" 100px
+        "sidebar"
+        "footer";
+
+    .header {
+        /*configuramos la caja del encabezado*/
+        grid-area: header;
+        
+    }
+
+    .navbar {
+        /*configuramos la caja de una de las columnas*/
+        grid-area: navbar;
+        background-color: rgba(179, 46, 241, 0.74);
+    }
+
+    .sidebar {
+        /*configuramos la caja de una de las columnas*/
+        grid-area: sidebar;
+        background-color: rgba(77, 237, 106, 0.74);
+    }
+
+    .main {
+        /*configuramos la caja de introducción*/
+        background-color: rgba(225, 23, 67, 0.74);
+        grid-area: main;
+        text-align: center;
+    }
+
+    .footer {
+        /*configuramos la caja de introducción*/
+        grid-area: footer;
+        background-color: rgba(237, 123, 67, 0.74);
+    }
+
+/*Configuración para Tablet, no esta configurada al 100*/
+    @media (min-width:768px) {
+        grid-template:
+            "header navbar" 50px
+            "header main" 50px
+            "sidebar navbar" auto
+            "footer footer" 100px/
+            200px auto;
+            
+    }
+/*Configuración de la pantalla para LAPTOP*/
+    @media (min-width:992px) {
+        grid-template:
+            "header header" 100px
+            "main main" 100px
+            "sidebar navbar" 1450px
+            "footer footer"300px/
+            620px 620px         
+    }
+}
+
+/* tipografía*/
+
+h1, h2, h3 {
+    font-family: "Sonsie One", cursive;
+    color:black
+}
+
+p, input, li{
+    font-family: "Open Sans Condensed", sans-serif;
+    color:black
+}
+
+h1{
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 4px 8px 10px black;
+    color: blue;
+/*Animación del título*/
+    animation-name: Titulo;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+@keyframes Titulo{
+0%{
+    color: Blue;
+}
+50%{
+    color:red;
+}
+100%{
+    color:blue;
+}
+}
+
+h2{
+    font-size: 1.5rem;
+    text-align: center;
+    color:black;
+    /*Animación del titulo 2*/
+    transition: color 0.5s ease;
+}
+/*Generar que solo se active cuando coloque el mouse sobre él*/
+h2:hover{
+    color: rgba(1, 46, 241, 0.74)
+}
+
+h3{
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+
+p,li{
+    font-size: 1.8rem;
+    line-height: 1.5;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*header layout*/
+
+nav, article, aside, footer{
+    font-size: larger;
+}
+
+nav{
+    height:50px;
+    background-color:aqua;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+nav ul{
+    padding: 0;
+    list-style-type: none;
+    flex: 2;
+    display: flex;
+}
+
+nav li{
+    display: inline;
+    text-align: center;
+    flex: 1;
+}
+
+nav a{
+    display: inline-block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+}
+
+nav form{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0.2rem;
+}
+
+imput{
+    font-size: 1.6rem;
+    height: 32px;
+}
+
+impur[type="search"]{
+    flex: 3;
+}
+
+imput[type="submit"]{
+    flex: 1;
+    margin-left: 1rem;
+    background: black;
+    border: 0;
+    color:white;
+}
+/*Animamos la imagen de la izquersa*/
+.Imagen1{
+    animation:moviminetox 10s linear infinite paused; 
+}
+
+.Imagen1:hover{
+    animation-play-state: running;
+}
+@keyframes moviminetox{
+0%,50%,100%{
+    transform: translateX(0);
+}
+25%{
+    transform: translateX(100px);
+}
+75%{
+    transform: translateX(-100px);
+}
+}
+
+.Imagen2{
+    animation:moviminetoy 10s linear infinite paused; 
+}
+
+.Imagen2:hover{
+    animation-play-state: running;
+}
+@keyframes moviminetoy{
+0%,50%,100%{
+    transform: translateY(0);
+}
+25%{
+    transform: translateY(50px);
+}
+75%{
+    transform: translateY(-50px);
+}
+}
+
+.Imagen3{
+    animation:rotacion 5s linear infinite paused;
+}
+
+.Imagen3:hover{
+    animation-play-state: running;
+}
+
+@keyframes rotacion{
+0%,100%{
+    transform: rotate(0deg);
+}
+50%{
+    transform: rotate(180deg);
+}
+}
+

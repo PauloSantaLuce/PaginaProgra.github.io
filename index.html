@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso</title>
+  <link rel="stylesheet" href="Grip.css">
+</head>
+
+<body>
+  <header>
+    <h1>Bienvenido a mi</h1>
+  </header>
+
+  <div class="container">
+    <h4>Acceso</h4>
+    <form>
+      <h5>Usuario</h5>
+      <input type="text" id="usuarios" class="input-field" required>
+
+      <h5>Contraseña</h5>
+      <input type="password" id="clave" class="input-field" required>
+      <br><br>
+      <input type="button" value="Confirmar" class="btn" onclick="verificar()">
+    </form>
+  </div>
+
+  <script>
+    let control = 0;
+    let contraseña = 'Gemi2';
+
+    function verificar() {
+      let clave = document.getElementById('clave').value;
+      if (clave != contraseña) {
+        alert('La contraseña es incorrecta');
+      } else {
+        window.location.href = "1.Un poco sobre mi.html";
+      }
+    }
+  </script>
+</body>
+
+</html>
